@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from '../styles/portfolio.module.css';
 import Project from '../components/project/project';
 import ProjectButton from '../components/project/projectButtons';
+import projectInfo from '../projects/projects';
 
 export default function Portfolio() {
 	return (
@@ -28,26 +29,26 @@ export default function Portfolio() {
 						</svg>
 					</a>
 				</Link>
-				<Project
-					image='/projects/green-lawns.png'
-					title={
-						<>
-							Green Lawns
-							<br />
-							Boarding Kennels
-						</>
-					}
-					description='Project Responsive website with image gallery'
-					year='2020'
-					link='/portfolio/green-lawns-boarding-kennels'
-				/>
+				{projectInfo.map((project) => {
+					return (
+						<Project
+							image={project.image}
+							title={project.title}
+							description={project.description}
+							year={project.year}
+							link={project.link}
+							key={project.title}
+						/>
+					);
+				})}
+
 				<nav className={styles.nav}>
 					<svg xmlns='http://www.w3.org/2000/svg' width='67.773' height='57.965'>
 						<path fill='none' d='M4.904 0h57.965v57.965H4.904z' />
 						<path
 							d='M33.887 7.361L0 41.248l7.907 7.907 25.98-25.98 25.98 25.98 7.907-7.907z'
 							fill='#fc5185'
-							fill-rule='evenodd'
+							fillRule='evenodd'
 						/>
 					</svg>
 					<ProjectButton isSelected={true} />
@@ -59,7 +60,7 @@ export default function Portfolio() {
 						<path
 							d='M33.886 50.604l33.887-33.887-7.907-7.907-25.98 25.98L7.906 8.81l-7.907 7.907z'
 							fill='#fc5185'
-							fill-rule='evenodd'
+							fillRule='evenodd'
 						/>
 					</svg>
 				</nav>
@@ -67,4 +68,3 @@ export default function Portfolio() {
 		</>
 	);
 }
-// const { title, description, year, link, image } = props;
