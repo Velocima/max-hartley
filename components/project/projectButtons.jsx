@@ -1,7 +1,7 @@
 export default function ProjectButton({ isSelected }) {
 	return isSelected ? (
 		<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'>
-			<g stroke='#fc5185' stroke-width='3' fill='none'>
+			<g stroke='#fc5185' strokeWidth='3' fill='none'>
 				<circle cx='11' cy='11' r='11' stroke='none' />
 				<circle cx='11' cy='11' r='9.5' />
 			</g>
