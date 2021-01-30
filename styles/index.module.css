@@ -13,6 +13,7 @@
 	margin-bottom: 10vh;
 	color: #f5f5f5;
 	text-align: right;
+	z-index: 20;
 }
 .title h1 {
 	font: normal normal normal 90px/109px Varela Round;
@@ -23,11 +24,12 @@
 .title h2 {
 	font: normal normal normal 30px/37px Varela Round;
 	text-align: right;
-	padding-right: 10px;
+	padding-right: 15px;
 }
 
 .links {
 	display: flex;
+	z-index: 20;
 }
 .links a {
 	display: flex;
@@ -69,6 +71,7 @@
 	text-align: right;
 	transform: rotate(-45deg);
 	transition: 0.5s;
+	z-index: 20;
 }
 
 .portfolioLink:hover {

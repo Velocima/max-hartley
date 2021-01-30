@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import style from '../styles/index.module.css';
 import Link from 'next/link';
+import Bars from '../components/bars/bars';
 
 export default function Home() {
 	return (
@@ -123,6 +124,7 @@ export default function Home() {
 				<Link href='/portfolio'>
 					<a className={style.portfolioLink}>Click to view my work</a>
 				</Link>
+				<Bars />
 			</main>
 		</>
 	);

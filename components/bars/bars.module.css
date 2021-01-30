@@ -1,0 +1,16 @@
+.bar {
+	background-color: #3fc1c9;
+	width: 100vmax;
+	position: fixed;
+	bottom: 0;
+	animation: barMove backwards linear infinite;
+}
+
+@keyframes barMove {
+	from {
+		transform: translate(-60vmax, 60vmax) rotate(-45deg);
+	}
+	to {
+		transform: translate(120vmax, -120vmax) rotate(-45deg);
+	}
+}
