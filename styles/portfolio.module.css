@@ -1,0 +1,28 @@
+.main {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	min-width: 100%;
+	min-height: 100vh;
+	background-color: #364f6b;
+}
+.home {
+	width: 15vw;
+	display: flex;
+	justify-content: center;
+}
+
+.nav {
+	position: fixed;
+	top: 50vh;
+	left: 15vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transform: translate(-50%, -50%);
+}
+
+.nav svg {
+	margin: 5px 0;
+}
