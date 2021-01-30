@@ -29,18 +29,20 @@ export default function Portfolio() {
 						</svg>
 					</a>
 				</Link>
-				{projectInfo.map((project) => {
-					return (
-						<Project
-							image={project.image}
-							title={project.title}
-							description={project.description}
-							year={project.year}
-							link={project.link}
-							key={project.title}
-						/>
-					);
-				})}
+				<section className={styles.projects}>
+					{projectInfo.map((project) => {
+						return (
+							<Project
+								image={project.image}
+								title={project.title}
+								description={project.description}
+								year={project.year}
+								link={project.link}
+								key={project.title}
+							/>
+						);
+					})}
+				</section>
 
 				<nav className={styles.nav}>
 					<svg xmlns='http://www.w3.org/2000/svg' width='67.773' height='57.965'>

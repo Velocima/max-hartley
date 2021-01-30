@@ -15,6 +15,11 @@
 	animation: pulse 1s infinite;
 }
 
+.projects {
+	overflow: hidden;
+	height: 80vh;
+}
+
 .nav {
 	position: fixed;
 	top: 50vh;

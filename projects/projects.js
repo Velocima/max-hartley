@@ -8,9 +8,16 @@ const projectInfo = [
 				Boarding Kennels
 			</>
 		),
-		description: 'Project Responsive website with image gallery',
+		description: 'Responsive website with image gallery',
 		year: '2020',
 		link: '/portfolio/green-lawns-boarding-kennels',
+	},
+	{
+		image: '/projects/french-au-cafe.png',
+		title: 'French Au Café',
+		description: 'Responsive website with image gallery',
+		year: '2020',
+		link: '/portfolio/french-au-cafe',
 	},
 ];
 
