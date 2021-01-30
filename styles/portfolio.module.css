@@ -11,6 +11,9 @@
 	display: flex;
 	justify-content: center;
 }
+.home:hover {
+	animation: pulse 1s infinite;
+}
 
 .nav {
 	position: fixed;
@@ -25,4 +28,31 @@
 
 .nav svg {
 	margin: 5px 0;
+}
+
+@keyframes pulse {
+	0% {
+	}
+	10% {
+		transform: rotate(10deg);
+	}
+	15% {
+		transform: rotate(-5deg);
+	}
+	20% {
+		transform: scale(1.2) rotate(3deg);
+	}
+	30% {
+		transform: scale(1.2);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	70% {
+	}
+	90% {
+		transform: scale(1.2);
+	}
+	100% {
+	}
 }
