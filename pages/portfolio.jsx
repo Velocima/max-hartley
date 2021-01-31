@@ -3,8 +3,21 @@ import styles from '../styles/portfolio.module.css';
 import Project from '../components/project/project';
 import ProjectButton from '../components/project/projectButtons';
 import projectInfo from '../projects/projects';
+import { useState } from 'react';
 
 export default function Portfolio() {
+	const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+	const handleNavUpClick = () => {
+		setCurrentProjectIndex((prevState) =>
+			prevState === 0 ? projectInfo.length - 1 : prevState - 1
+		);
+	};
+	const handleNavDownClick = () => {
+		setCurrentProjectIndex((prevState) =>
+			prevState === projectInfo.length - 1 ? 0 : prevState + 1
+		);
+	};
 	return (
 		<>
 			<main className={styles.main}>
@@ -45,7 +58,12 @@ export default function Portfolio() {
 				</section>
 
 				<nav className={styles.nav}>
-					<svg xmlns='http://www.w3.org/2000/svg' width='67.773' height='57.965'>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='67.773'
+						height='57.965'
+						onClick={handleNavUpClick}
+					>
 						<path fill='none' d='M4.904 0h57.965v57.965H4.904z' />
 						<path
 							d='M33.887 7.361L0 41.248l7.907 7.907 25.98-25.98 25.98 25.98 7.907-7.907z'
@@ -53,11 +71,23 @@ export default function Portfolio() {
 							fillRule='evenodd'
 						/>
 					</svg>
-					<ProjectButton isSelected={true} />
-					<ProjectButton />
-					<ProjectButton />
-					<ProjectButton />
-					<svg xmlns='http://www.w3.org/2000/svg' width='67.773' height='57.965'>
+					{projectInfo.map((project, index) => {
+						return (
+							<ProjectButton
+								isSelected={index === currentProjectIndex}
+								onClick={() => {
+									setCurrentProjectIndex(index);
+								}}
+								key={project.title}
+							/>
+						);
+					})}
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='67.773'
+						height='57.965'
+						onClick={handleNavDownClick}
+					>
 						<path fill='none' d='M62.869 57.965H4.908V0h57.961z' />
 						<path
 							d='M33.886 50.604l33.887-33.887-7.907-7.907-25.98 25.98L7.906 8.81l-7.907 7.907z'

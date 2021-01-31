@@ -43,6 +43,14 @@
 .nav svg:last-child:hover {
 	transform: translateY(10px) scale(1.1);
 }
+.nav svg:first-child:hover:active {
+	transform: translateY(-10px) scale(1);
+	transition: 0.1s;
+}
+.nav svg:last-child:hover:active {
+	transform: translateY(10px) scale(1);
+	transition: 0.1s;
+}
 
 @keyframes pulse {
 	0% {

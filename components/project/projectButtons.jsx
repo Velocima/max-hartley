@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ProjectButton({ isSelected }) {
+export default function ProjectButton({ isSelected, onClick }) {
 	const [isHovered, setIsHovered] = useState(false);
 	return (
 		<svg
@@ -14,6 +14,7 @@ export default function ProjectButton({ isSelected }) {
 			}}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
+			onClick={onClick}
 		>
 			<circle
 				style={{ transition: '0.15s' }}
