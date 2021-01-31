@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ProjectButton({ isSelected, onClick }) {
+export default function ProjectButton({ isSelected, onClick, onMouseEnter, onMouseLeave, index }) {
 	const [isHovered, setIsHovered] = useState(false);
 	return (
 		<svg
@@ -12,9 +12,13 @@ export default function ProjectButton({ isSelected, onClick }) {
 				margin: !isSelected ? '7px' : '3px',
 				transform: `scale(${isSelected ? 1 : isHovered ? 1.5 : 1})`,
 			}}
-			onMouseEnter={() => setIsHovered(true)}
+			onMouseEnter={() => {
+				setIsHovered(true);
+				onMouseEnter();
+			}}
 			onMouseLeave={() => setIsHovered(false)}
 			onClick={onClick}
+			key={index}
 		>
 			<circle
 				style={{ transition: '0.15s' }}

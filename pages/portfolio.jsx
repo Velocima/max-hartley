@@ -3,19 +3,78 @@ import styles from '../styles/portfolio.module.css';
 import Project from '../components/project/project';
 import ProjectButton from '../components/project/projectButtons';
 import projectInfo from '../projects/projects';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Portfolio() {
 	const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+	const [previousProjectIndex, setPreviousProjectIndex] = useState(projectInfo.length - 1);
+	const [nextProjectIndex, setNextProjectIndex] = useState(1);
+	const [isProjectChanging, setIsProjectChanging] = useState(false);
+	const [isProjectChangeNext, setIsProjectChangeNext] = useState(true);
 
 	const handleNavUpClick = () => {
-		setCurrentProjectIndex((prevState) =>
-			prevState === 0 ? projectInfo.length - 1 : prevState - 1
-		);
+		if (isProjectChanging) return;
+		setIsProjectChanging(true);
+		setIsProjectChangeNext(false);
+		setTimeout(() => {
+			setIsProjectChanging(false);
+			setCurrentProjectIndex((prevState) =>
+				prevState === 0 ? projectInfo.length - 1 : prevState - 1
+			);
+		}, 500);
 	};
+
 	const handleNavDownClick = () => {
-		setCurrentProjectIndex((prevState) =>
-			prevState === projectInfo.length - 1 ? 0 : prevState + 1
+		if (isProjectChanging) return;
+		setIsProjectChanging(true);
+		setIsProjectChangeNext(true);
+		setTimeout(() => {
+			setIsProjectChanging(false);
+			setCurrentProjectIndex((prevState) =>
+				prevState === projectInfo.length - 1 ? 0 : prevState + 1
+			);
+		}, 500);
+	};
+
+	useEffect(() => {
+		setPreviousProjectIndex(
+			currentProjectIndex === 0 ? projectInfo.length - 1 : currentProjectIndex - 1
+		);
+		setNextProjectIndex(
+			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
+		);
+	}, [currentProjectIndex]);
+
+	const projectStyle = {
+		transition: isProjectChanging ? '0.5s' : 'none',
+		transform: `translateY(${
+			!isProjectChanging ? '-80vh' : isProjectChangeNext ? '-160vh' : 0
+		})`,
+	};
+
+	const handleNavButtonClick = (index) => {
+		if (isProjectChanging || index === currentProjectIndex) return;
+		setIsProjectChanging(true);
+		setIsProjectChangeNext(index > currentProjectIndex);
+		setTimeout(() => {
+			setIsProjectChanging(false);
+			setCurrentProjectIndex(index);
+		}, 500);
+	};
+
+	const handleMouseEnterNavButton = (index) => {
+		if (index === currentProjectIndex || isProjectChanging) return;
+
+		setNextProjectIndex((prevState) => (prevState < index ? index : prevState));
+		setPreviousProjectIndex((prevState) => (prevState > index ? index : prevState));
+	};
+	const handleMouseLeaveNavButton = () => {
+		if (isProjectChanging) return;
+		setPreviousProjectIndex(
+			currentProjectIndex === 0 ? projectInfo.length - 1 : currentProjectIndex - 1
+		);
+		setNextProjectIndex(
+			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
 		);
 	};
 	return (
@@ -43,18 +102,21 @@ export default function Portfolio() {
 					</a>
 				</Link>
 				<section className={styles.projects}>
-					{projectInfo.map((project) => {
-						return (
-							<Project
-								image={project.image}
-								title={project.title}
-								description={project.description}
-								year={project.year}
-								link={project.link}
-								key={project.title}
-							/>
-						);
-					})}
+					{[previousProjectIndex, currentProjectIndex, nextProjectIndex].map(
+						(index, i) => {
+							return (
+								<Project
+									image={projectInfo[index].image}
+									title={projectInfo[index].title}
+									description={projectInfo[index].description}
+									year={projectInfo[index].year}
+									link={projectInfo[index].link}
+									key={i}
+									style={projectStyle}
+								/>
+							);
+						}
+					)}
 				</section>
 
 				<nav className={styles.nav}>
@@ -76,9 +138,12 @@ export default function Portfolio() {
 							<ProjectButton
 								isSelected={index === currentProjectIndex}
 								onClick={() => {
-									setCurrentProjectIndex(index);
+									handleNavButtonClick(index);
 								}}
-								key={project.title}
+								key={index}
+								onMouseEnter={() => handleMouseEnterNavButton(index)}
+								onMouseLeave={handleMouseLeaveNavButton}
+								index={index}
 							/>
 						);
 					})}
