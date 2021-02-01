@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 export default function Portfolio() {
 	const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+	const [currentButtonIndex, setCurrentButtonIndex] = useState(0);
 	const [previousProjectIndex, setPreviousProjectIndex] = useState(projectInfo.length - 1);
 	const [nextProjectIndex, setNextProjectIndex] = useState(1);
 	const [isProjectChanging, setIsProjectChanging] = useState(false);
@@ -14,11 +15,14 @@ export default function Portfolio() {
 
 	const handleNavUpClick = () => {
 		if (isProjectChanging) return;
+		setIsProjectChangeNext(false);
 		setIsProjectChanging(true);
 		setPreviousProjectIndex(
 			currentProjectIndex === 0 ? projectInfo.length - 1 : currentProjectIndex - 1
 		);
-		setIsProjectChangeNext(false);
+		setCurrentButtonIndex((prevState) =>
+			prevState === 0 ? projectInfo.length - 1 : prevState - 1
+		);
 		setTimeout(() => {
 			setIsProjectChanging(false);
 			setCurrentProjectIndex((prevState) =>
@@ -29,11 +33,14 @@ export default function Portfolio() {
 
 	const handleNavDownClick = () => {
 		if (isProjectChanging) return;
+		setIsProjectChangeNext(true);
 		setIsProjectChanging(true);
 		setNextProjectIndex(
 			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
 		);
-		setIsProjectChangeNext(true);
+		setCurrentButtonIndex((prevState) =>
+			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
+		);
 		setTimeout(() => {
 			setIsProjectChanging(false);
 			setCurrentProjectIndex((prevState) =>
@@ -67,6 +74,7 @@ export default function Portfolio() {
 			setPreviousProjectIndex(index);
 		}
 		setIsProjectChanging(true);
+		setCurrentButtonIndex(index);
 		setTimeout(() => {
 			setIsProjectChanging(false);
 			setCurrentProjectIndex(index);
@@ -146,7 +154,7 @@ export default function Portfolio() {
 					{projectInfo.map((project, index) => {
 						return (
 							<ProjectButton
-								isSelected={index === currentProjectIndex}
+								isSelected={index === currentButtonIndex}
 								onClick={() => {
 									handleNavButtonClick(index);
 								}}
