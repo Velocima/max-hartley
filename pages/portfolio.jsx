@@ -15,6 +15,9 @@ export default function Portfolio() {
 	const handleNavUpClick = () => {
 		if (isProjectChanging) return;
 		setIsProjectChanging(true);
+		setPreviousProjectIndex(
+			currentProjectIndex === 0 ? projectInfo.length - 1 : currentProjectIndex - 1
+		);
 		setIsProjectChangeNext(false);
 		setTimeout(() => {
 			setIsProjectChanging(false);
@@ -27,6 +30,9 @@ export default function Portfolio() {
 	const handleNavDownClick = () => {
 		if (isProjectChanging) return;
 		setIsProjectChanging(true);
+		setNextProjectIndex(
+			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
+		);
 		setIsProjectChangeNext(true);
 		setTimeout(() => {
 			setIsProjectChanging(false);
@@ -54,8 +60,13 @@ export default function Portfolio() {
 
 	const handleNavButtonClick = (index) => {
 		if (isProjectChanging || index === currentProjectIndex) return;
-		setIsProjectChanging(true);
 		setIsProjectChangeNext(index > currentProjectIndex);
+		if (index > currentProjectIndex) {
+			setNextProjectIndex(index);
+		} else {
+			setPreviousProjectIndex(index);
+		}
+		setIsProjectChanging(true);
 		setTimeout(() => {
 			setIsProjectChanging(false);
 			setCurrentProjectIndex(index);
@@ -64,7 +75,6 @@ export default function Portfolio() {
 
 	const handleMouseEnterNavButton = (index) => {
 		if (index === currentProjectIndex || isProjectChanging) return;
-
 		setNextProjectIndex((prevState) => (prevState < index ? index : prevState));
 		setPreviousProjectIndex((prevState) => (prevState > index ? index : prevState));
 	};
