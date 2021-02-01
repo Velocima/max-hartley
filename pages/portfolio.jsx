@@ -39,7 +39,7 @@ export default function Portfolio() {
 			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
 		);
 		setCurrentButtonIndex((prevState) =>
-			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
+			prevState === projectInfo.length - 1 ? 0 : prevState + 1
 		);
 		setTimeout(() => {
 			setIsProjectChanging(false);
