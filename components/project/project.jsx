@@ -4,7 +4,6 @@ import { AiOutlineGlobal } from 'react-icons/ai';
 
 export default function Project({ project, style }) {
 	const { title, description, year, link, image, github } = project;
-	console.log(github);
 	return (
 		<section className={styles.projectContainer} style={style}>
 			<div
