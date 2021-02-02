@@ -14,11 +14,10 @@
 	grid-column: 1 / 2;
 	height: 100%;
 	width: 100%;
-	background-size: cover;
-	transition: 0.5s;
 }
+
 .projectContainer h1,
-.projectContainer a,
+.links,
 .projectContainer p {
 	grid-column: 1 / 2;
 	z-index: 20;
@@ -30,17 +29,32 @@
 	font-size: 60px;
 	align-self: end;
 	text-align: center;
+	pointer-events: none;
 }
-.projectContainer a {
+
+.links {
+	display: flex;
+	z-index: 20;
 	grid-row: 2 / 3;
-	font-size: 30px;
-	background-color: #fc5185;
-	padding: 30px;
-	border-radius: 40px;
-	transition: 0.5s;
 }
-.projectContainer a:hover {
-	padding: 33px;
+.links a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 40px;
+}
+
+.links svg {
+	margin-bottom: 10px;
+	height: 110px;
+	width: 110px;
+	transition: 0.3s;
+	fill: #fc5185;
+}
+
+.links svg:hover {
+	transform: scale(1.1);
 }
 .projectContainer p {
 	grid-row: 3 / 4;

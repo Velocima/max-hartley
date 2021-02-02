@@ -124,13 +124,9 @@ export default function Portfolio() {
 						(index, i) => {
 							return (
 								<Project
-									image={projectInfo[index].image}
-									title={projectInfo[index].title}
-									description={projectInfo[index].description}
-									year={projectInfo[index].year}
-									link={projectInfo[index].link}
-									key={i}
+									project={projectInfo[index]}
 									style={projectStyle}
+									key={i}
 								/>
 							);
 						}
