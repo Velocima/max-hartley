@@ -49,22 +49,6 @@ export default function Portfolio() {
 		}, 500);
 	};
 
-	useEffect(() => {
-		setPreviousProjectIndex(
-			currentProjectIndex === 0 ? projectInfo.length - 1 : currentProjectIndex - 1
-		);
-		setNextProjectIndex(
-			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
-		);
-	}, [currentProjectIndex]);
-
-	const projectStyle = {
-		transition: isProjectChanging ? '0.5s' : 'none',
-		transform: `translateY(${
-			!isProjectChanging ? '-80vh' : isProjectChangeNext ? '-160vh' : 0
-		})`,
-	};
-
 	const handleNavButtonClick = (index) => {
 		if (isProjectChanging || index === currentProjectIndex) return;
 		setIsProjectChangeNext(index > currentProjectIndex);
@@ -86,6 +70,7 @@ export default function Portfolio() {
 		setNextProjectIndex((prevState) => (prevState < index ? index : prevState));
 		setPreviousProjectIndex((prevState) => (prevState > index ? index : prevState));
 	};
+
 	const handleMouseLeaveNavButton = () => {
 		if (isProjectChanging) return;
 		setPreviousProjectIndex(
@@ -95,6 +80,23 @@ export default function Portfolio() {
 			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
 		);
 	};
+
+	useEffect(() => {
+		setPreviousProjectIndex(
+			currentProjectIndex === 0 ? projectInfo.length - 1 : currentProjectIndex - 1
+		);
+		setNextProjectIndex(
+			currentProjectIndex === projectInfo.length - 1 ? 0 : currentProjectIndex + 1
+		);
+	}, [currentProjectIndex]);
+
+	const projectStyle = {
+		transition: isProjectChanging ? '0.5s' : 'none',
+		transform: `translateY(${
+			!isProjectChanging ? '-80vh' : isProjectChangeNext ? '-160vh' : 0
+		})`,
+	};
+
 	return (
 		<>
 			<main className={styles.main}>
