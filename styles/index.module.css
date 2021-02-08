@@ -22,6 +22,7 @@
 	justify-content: space-between;
 	z-index: 20;
 	width: 60%;
+	flex-wrap: wrap;
 }
 .links a {
 	display: flex;
@@ -36,7 +37,7 @@
 .links svg {
 	margin-bottom: 10px;
 }
-.links a:nth-child(4) svg {
+.links a:nth-child(3) svg {
 	margin-right: 10px;
 }
 
