@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import style from '../styles/index.module.css';
 import Link from 'next/link';
+import FairyLights from '../components/fairylights/FairyLights';
 
 export default function Home() {
 	return (
@@ -9,7 +10,8 @@ export default function Home() {
 				<title>Create Next App</title>
 				<link rel='icon' href='/logo.png' />
 			</Head>
-			<main className={style.main}>
+			<main className={style.main}></main>
+			<FairyLights>
 				<section className={style.title}>
 					<h1>Max Hartley</h1>
 					<h2>Full Stack Web Developer</h2>
@@ -123,7 +125,7 @@ export default function Home() {
 				<Link href='/portfolio'>
 					<a className={style.portfolioLink}>Click to view my work</a>
 				</Link>
-			</main>
+			</FairyLights>
 		</>
 	);
 }
