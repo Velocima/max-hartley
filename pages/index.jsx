@@ -97,6 +97,9 @@ export default function Home() {
 						</svg>
 						CV
 					</a>
+					<Link href='/portfolio'>
+						<a className={style.portfolioLink}>Portfolio</a>
+					</Link>
 					<a href='mailto:hartley.max@outlook.com' target='_blank'>
 						<svg xmlns='http://www.w3.org/2000/svg' width='128.475' height='112.165'>
 							<path
@@ -122,9 +125,6 @@ export default function Home() {
 						Contact Me
 					</a>
 				</section>
-				<Link href='/portfolio'>
-					<a className={style.portfolioLink}>Click to view my work</a>
-				</Link>
 			</FairyLights>
 		</>
 	);
