@@ -14,7 +14,7 @@ const projectInfo = [
 		github: 'https://github.com/Velocima/green-lawns-next',
 	},
 	{
-		image: '/projects/wallpaper1.jpg',
+		image: '/projects/portfolio.jpg',
 		title: 'Personal Portfolio',
 		description: 'Responsive website with image gallery',
 		year: '2021',
