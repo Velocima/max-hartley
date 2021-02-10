@@ -42,7 +42,7 @@
 	margin-right: 10px;
 }
 
-.links a:not(:nth-child(3)):hover {
+.links a:not(:nth-child(4)):hover {
 	color: #fc5185;
 }
 .links a:hover svg {
