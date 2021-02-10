@@ -2,8 +2,27 @@ import Head from 'next/head';
 import style from '../styles/index.module.css';
 import Link from 'next/link';
 import FairyLights from '../components/fairylights/FairyLights';
+import Bio from '../components/bio/Bio';
+import { useState, useRef, useEffect } from 'react';
+import useWindowSize from '../hooks/useWindowSize';
 
 export default function Home() {
+	const [isBioHidden, setIsBioHidden] = useState(true);
+
+	const handleClick = ({ target }) => {
+		if (target.className === 'paragraph') return;
+		setIsBioHidden((s) => !s);
+	};
+	const [titlePos, setTitlePos] = useState([0, 0]);
+	const [width, height] = useWindowSize();
+	const titleRef = useRef(null);
+	useEffect(() => {
+		if (titleRef === null) return;
+		setTitlePos([
+			titleRef.current.getBoundingClientRect().top,
+			titleRef.current.getBoundingClientRect().right,
+		]);
+	}, [width, height]);
 	return (
 		<>
 			<Head>
@@ -12,8 +31,8 @@ export default function Home() {
 			</Head>
 			<main className={style.main}></main>
 			<FairyLights>
-				<section className={style.title}>
-					<h1>Max Hartley</h1>
+				<section className={style.title} onClick={handleClick}>
+					<h1 ref={titleRef}>Max Hartley</h1>
 					<h2>Full Stack Web Developer</h2>
 				</section>
 				<section className={style.links}>
@@ -126,6 +145,12 @@ export default function Home() {
 					</Link>
 				</section>
 			</FairyLights>
+			<Bio
+				isHidden={isBioHidden}
+				onClick={handleClick}
+				top={titlePos[0]}
+				left={titlePos[1]}
+			/>
 		</>
 	);
 }
