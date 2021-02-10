@@ -4,7 +4,8 @@
 	align-items: center;
 	min-width: 100%;
 	min-height: 100vh;
-	background-color: #364f6b;
+	background: transparent linear-gradient(150deg, #364f6b 0%, #364f6b 40%, #3fc1c9 100%) 0% 0%
+		no-repeat padding-box;
 }
 .home {
 	width: 15vw;
