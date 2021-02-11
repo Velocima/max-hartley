@@ -166,3 +166,46 @@
 		border: 5px solid #fc5185;
 	}
 }
+
+@media screen and (min-width: 2500px) {
+	.title h1 {
+		font-size: 125px;
+		margin-bottom: 40px;
+	}
+	.title h2 {
+		font-size: 40px;
+	}
+	.links svg {
+		transform: scale(1.4);
+		margin-bottom: 50px;
+		margin-top: 20px;
+	}
+	.links a {
+		font-size: 40px;
+	}
+	.portfolioLink {
+		width: 230px;
+		height: 230px;
+	}
+}
+@media screen and (min-width: 3800px) {
+	.title h1 {
+		font-size: 180px;
+		margin-bottom: 80px;
+	}
+	.title h2 {
+		font-size: 60px;
+	}
+	.links svg {
+		transform: scale(2);
+		margin-bottom: 50px;
+		margin-top: 20px;
+	}
+	.links a {
+		font-size: 60px;
+	}
+	.portfolioLink {
+		width: 330px;
+		height: 330px;
+	}
+}
