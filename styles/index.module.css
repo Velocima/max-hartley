@@ -90,3 +90,79 @@
 	100% {
 	}
 }
+
+@media screen and (max-width: 1200px) {
+	.links {
+		justify-content: space-evenly;
+	}
+	.links a:not(:last-child) {
+		flex-basis: 50%;
+	}
+	.links a:last-child {
+		margin: 10px auto;
+	}
+	.title h2 {
+		text-align: center;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.title h1 {
+		font-size: 70px;
+	}
+	.links {
+		width: 100%;
+		padding: 0 40px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.title {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.title h1 {
+		font-size: 60px;
+	}
+	.title h2 {
+		font-size: 24px;
+	}
+	.links {
+		padding: 0 20px;
+	}
+	.links a {
+		font-size: 24px;
+	}
+	.links svg {
+		transform: scale(0.8);
+	}
+	.portfolioLink {
+		width: 132px;
+		height: 132px;
+		border: 6px solid #fc5185;
+	}
+}
+@media screen and (max-width: 400px) {
+	.title {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.title h1 {
+		font-size: 45px;
+	}
+	.title h2 {
+		font-size: 20px;
+	}
+	.links {
+		padding: 0 10px;
+	}
+	.links a {
+		font-size: 20px;
+	}
+	.portfolioLink {
+		width: 115px;
+		height: 115px;
+		border: 5px solid #fc5185;
+	}
+}
