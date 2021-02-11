@@ -66,3 +66,99 @@
 .projectContainer span {
 	font-size: 16px;
 }
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+	.projectContainer {
+		grid-template-rows: 180px 1fr 1fr;
+	}
+}
+@media screen and (max-height: 500px) and (orientation: landscape) {
+	.projectContainer {
+		grid-template-rows: 120px 1fr 1fr;
+	}
+	.projectContainer h1 {
+		font-size: 50px;
+	}
+	.links svg {
+		height: 80px;
+		width: 80px;
+	}
+	.projectContainer p {
+		margin: 0 0 20px 50px;
+	}
+}
+@media screen and (max-height: 400px) and (orientation: landscape) {
+	.projectContainer {
+		grid-template-rows: 100px 1fr 1fr;
+	}
+	.projectContainer h1 {
+		font-size: 40px;
+	}
+	.links svg {
+		height: 70px;
+		width: 70px;
+	}
+	.projectContainer p {
+		font-size: 16px;
+		margin: 0 0 20px 50px;
+	}
+	.projectContainer span {
+		font-size: 14px;
+	}
+}
+@media screen and (max-height: 330px) and (orientation: landscape) {
+	.projectContainer {
+		grid-template-rows: 80px 1fr 1fr;
+	}
+	.projectContainer h1 {
+		font-size: 30px;
+	}
+	.links svg {
+		height: 60px;
+		width: 60px;
+	}
+}
+
+@media screen and (min-width: 2500px) {
+	.projectContainer h1 {
+		font-size: 80px;
+	}
+	.projectContainer p {
+		font-size: 28px;
+		margin: 0 0 40px 40px;
+	}
+	.projectContainer span {
+		font-size: 20px;
+	}
+	.links a {
+		margin: 0 55px;
+	}
+
+	.links svg {
+		margin-bottom: 14px;
+		height: 150px;
+		width: 150px;
+	}
+}
+
+@media screen and (min-width: 3800px) {
+	.projectContainer h1 {
+		font-size: 120px;
+	}
+	.projectContainer p {
+		font-size: 40px;
+		margin: 0 0 60px 60px;
+	}
+	.projectContainer span {
+		font-size: 32px;
+	}
+	.links a {
+		margin: 0 80px;
+	}
+
+	.links svg {
+		margin-bottom: 20px;
+		height: 220px;
+		width: 220px;
+	}
+}

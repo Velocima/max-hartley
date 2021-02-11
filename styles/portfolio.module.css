@@ -9,6 +9,7 @@
 }
 .home {
 	width: 15vw;
+	min-width: 150px;
 	display: flex;
 	justify-content: center;
 }
@@ -24,7 +25,7 @@
 .nav {
 	position: fixed;
 	top: 50vh;
-	left: 15vw;
+	left: max(15vw, 150px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
