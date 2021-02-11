@@ -10,41 +10,44 @@ export default function Bio({ isHidden, onClick, top, left }) {
 		pointerEvents: isHidden ? 'none' : 'all',
 	};
 
-	let bubbleStyle = {
-		top: width < 1200 ? top - 100 : top,
-		left: left + 40,
-		maxWidth: width - left - 55,
-	};
+	let bubbleStyle =
+		width > 1200
+			? {
+					top,
+					left: left + 40,
+					maxWidth: width - left - 55,
+					transform: isHidden ? 'translateY(-100vh)' : 'translateY(0)',
+					opacity: isHidden ? 0 : 1,
+			  }
+			: {
+					transform: isHidden ? 'translateY(-100vh)' : 'translateY(0)',
+					opacity: isHidden ? 0 : 1,
+			  };
 
-	let triangeStyle = {
-		top: top + 25,
-		left: left + 25,
-	};
 	useEffect(() => {
-		bubbleStyle = {
-			top,
-			left: left + 40,
-			maxWidth: width - left - 55,
-		};
-
-		triangeStyle = {
-			top: top + 25,
-			left: left + 25,
-		};
+		bubbleStyle =
+			width > 1200
+				? {
+						top,
+						left: left + 40,
+						maxWidth: width - left - 55,
+						transform: isHidden ? 'translateY(-100vh)' : 'translateY(0)',
+						opacity: isHidden ? 0 : 1,
+				  }
+				: {
+						transform: isHidden ? 'translateY(-100vh)' : 'translateY(0)',
+						opacity: isHidden ? 0 : 1,
+				  };
 	}, [width]);
 
 	return (
 		<section className={styles.bio} onClick={onClick} style={bioStyle}>
-			<div className={styles.speechBubble} style={bubbleStyle}>
-				<div className={styles.triangle} style={triangeStyle}></div>
-				<p className='paragraph'>
-					I'm a self taught developer currently living in the UK. ... Lorem ipsum, dolor
-					sit amet consectetur adipisicing elit. Sunt ducimus aperiam blanditiis ipsa
-					officiis reprehenderit, deserunt voluptates fugiat expedita perspiciatis
-					eligendi illum quae, perferendis necessitatibus nostrum est, aliquid
-					exercitationem fuga.
-				</p>
-			</div>
+			<p className={styles.speechBubble} style={bubbleStyle}>
+				I'm a self taught developer currently living in the UK. ... Lorem ipsum, dolor sit
+				amet consectetur adipisicing elit. Sunt ducimus aperiam blanditiis ipsa officiis
+				reprehenderit, deserunt voluptates fugiat expedita perspiciatis eligendi illum quae,
+				perferendis necessitatibus nostrum est, aliquid exercitationem fuga.
+			</p>
 		</section>
 	);
 }

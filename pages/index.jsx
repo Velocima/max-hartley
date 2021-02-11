@@ -29,7 +29,6 @@ export default function Home() {
 				<title>Create Next App</title>
 				<link rel='icon' href='/logo.png' />
 			</Head>
-			<main className={style.main}></main>
 			<FairyLights>
 				<section className={style.title} onClick={handleClick}>
 					<h1 ref={titleRef}>Max Hartley</h1>
