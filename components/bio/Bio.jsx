@@ -16,11 +16,9 @@ export default function Bio({ isHidden, onClick, top, left }) {
 					top,
 					left: left + 40,
 					maxWidth: width - left - 55,
-					transform: isHidden ? 'translateY(-100vh)' : 'translateY(0)',
 					opacity: isHidden ? 0 : 1,
 			  }
 			: {
-					transform: isHidden ? 'translateY(-100vh)' : 'translateY(0)',
 					opacity: isHidden ? 0 : 1,
 			  };
 
