@@ -31,7 +31,9 @@ export default function Home() {
 			</Head>
 			<FairyLights>
 				<section className={style.title} onClick={handleClick}>
-					<h1 ref={titleRef}>Max Hartley</h1>
+					<h1 ref={titleRef}>
+						Max Hartle<span>y</span>
+					</h1>
 					<h2>Full Stack Web Developer</h2>
 				</section>
 				<section className={style.links}>
