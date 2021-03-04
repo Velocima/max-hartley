@@ -1,6 +1,7 @@
 import styles from './bio.module.css';
 import useWindowSize from '../../hooks/useWindowSize';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Bio({ isHidden, onClick, top, left }) {
 	const [width, height] = useWindowSize();
@@ -41,10 +42,22 @@ export default function Bio({ isHidden, onClick, top, left }) {
 	return (
 		<section className={styles.bio} onClick={onClick} style={bioStyle}>
 			<p className={styles.speechBubble} style={bubbleStyle}>
-				I'm a self taught developer currently living in the UK. ... Lorem ipsum, dolor sit
-				amet consectetur adipisicing elit. Sunt ducimus aperiam blanditiis ipsa officiis
-				reprehenderit, deserunt voluptates fugiat expedita perspiciatis eligendi illum quae,
-				perferendis necessitatibus nostrum est, aliquid exercitationem fuga.
+				I am a self taught Full Stack Web Developer with a passion for creating bespoke,
+				elegant websites. In 2017 I graduated from the University of Birmingham with a
+				Bachelor's Degree in Mathematics. Shortly afterwards, my coding journey began
+				through the
+				<a href='https://www.codecademy.com/profiles/Velocimactor' target='_blank'>
+					{' '}
+					Codecademy{' '}
+				</a>{' '}
+				Web Development course where I found fulfilment in the flow coding. Since then my
+				skill set has expanded and I have created professional websites for several local
+				businesses. In the future I hope to advance my knowledge enough to contribute to new
+				and exciting technologies. For examples of my work, check out my{' '}
+				<Link href='/portfolio'>
+					<a>Portfolio</a>
+				</Link>
+				.
 			</p>
 		</section>
 	);

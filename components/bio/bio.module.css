@@ -21,6 +21,9 @@
 	z-index: 220;
 	padding: 15px;
 }
+.speechBubble a {
+	color: #fc5185;
+}
 
 @media screen and (max-width: 1200px) {
 	.bio {
