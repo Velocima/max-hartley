@@ -10,7 +10,8 @@ export default function Home() {
 	const [isBioHidden, setIsBioHidden] = useState(true);
 
 	const handleClick = ({ target }) => {
-		if (target.className === 'paragraph') return;
+		console.log(target);
+		if (target.className.includes('paragraph')) return;
 		setIsBioHidden((s) => !s);
 	};
 	const [titlePos, setTitlePos] = useState([0, 0]);
