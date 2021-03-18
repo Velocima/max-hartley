@@ -26,8 +26,9 @@
 }
 .projectContainer h1 {
 	grid-row: 1 / 2;
+	margin-top: 20px;
 	font-size: 60px;
-	align-self: end;
+	align-self: center;
 	text-align: center;
 	pointer-events: none;
 }
@@ -69,34 +70,27 @@
 
 @media screen and (max-height: 600px) and (orientation: landscape) {
 	.projectContainer {
-		grid-template-rows: 180px 1fr 1fr;
+		grid-template-rows: 4fr 3fr 1fr;
+	}
+	.projectContainer {
+		margin-top: 0;
+	}
+	.links svg {
+		height: 78px;
+		width: 78px;
 	}
 }
 @media screen and (max-height: 500px) and (orientation: landscape) {
-	.projectContainer {
-		grid-template-rows: 120px 1fr 1fr;
-	}
 	.projectContainer h1 {
 		font-size: 50px;
-	}
-	.links svg {
-		height: 80px;
-		width: 80px;
 	}
 	.projectContainer p {
 		margin: 0 0 20px 50px;
 	}
 }
 @media screen and (max-height: 400px) and (orientation: landscape) {
-	.projectContainer {
-		grid-template-rows: 100px 1fr 1fr;
-	}
 	.projectContainer h1 {
 		font-size: 40px;
-	}
-	.links svg {
-		height: 70px;
-		width: 70px;
 	}
 	.projectContainer p {
 		font-size: 16px;
@@ -107,15 +101,40 @@
 	}
 }
 @media screen and (max-height: 330px) and (orientation: landscape) {
-	.projectContainer {
-		grid-template-rows: 80px 1fr 1fr;
-	}
 	.projectContainer h1 {
 		font-size: 30px;
 	}
 	.links svg {
 		height: 60px;
 		width: 60px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.projectContainer h1 {
+		font-size: 50px;
+	}
+}
+@media screen and (max-width: 650px) {
+	.projectContainer h1 {
+		font-size: 40px;
+	}
+}
+@media screen and (max-width: 600px) {
+	.links svg {
+		height: 70px;
+		width: 70px;
+	}
+	.links a {
+		margin: 0;
+	}
+	.links a:first-child {
+		margin-right: 30px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.projectContainer h1 {
+		font-size: 30px;
 	}
 }
 
