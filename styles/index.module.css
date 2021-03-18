@@ -97,13 +97,14 @@
 
 @media screen and (max-width: 1200px) {
 	.links {
-		justify-content: space-evenly;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		place-items: center;
+		gap: 10px;
 	}
-	.links a:not(:last-child) {
-		flex-basis: 50%;
-	}
-	.links a:last-child {
-		margin: 10px auto;
+	.links a {
+		margin: 0;
 	}
 	.title h2 {
 		text-align: center;
