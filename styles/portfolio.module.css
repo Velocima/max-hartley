@@ -54,6 +54,36 @@
 	transition: 0.1s;
 }
 
+@media screen and (max-width: 800px) {
+	.home {
+		min-width: 120px;
+	}
+	.nav {
+		left: max(15vw, 120px);
+	}
+	.home svg,
+	.nav svg:first-child,
+	.nav svg:last-child {
+		transform: scale(0.7);
+	}
+	.nav svg:not(:first-child):not(:last-child),
+	.nav circle {
+		transform: scale(0.8) translateX(10%);
+	}
+}
+@media screen and (max-width: 600px) {
+	.main {
+		flex-direction: column;
+		flex-flow: column-reverse;
+	}
+	.projects {
+		margin-top: 10px;
+	}
+	.nav {
+		left: 12.5vw;
+	}
+}
+
 @keyframes pulse {
 	0% {
 	}
