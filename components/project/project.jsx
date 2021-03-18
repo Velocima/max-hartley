@@ -80,14 +80,7 @@ export default function Project({ project, style }) {
 					</svg>
 				</a>
 			</div>
-
-			<p>
-				Project
-				<br />
-				<span>{description}</span>
-				<br />
-				Year - {year}
-			</p>
+			<p>{year}</p>
 		</section>
 	);
 }
