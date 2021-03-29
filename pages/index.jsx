@@ -92,7 +92,7 @@ export default function Home() {
 						</svg>
 						GitHub
 					</a>
-					<a href='' target='_blank'>
+					<a href='/Maximilian_Hartley_CV.PDF' target='_blank' download>
 						<svg xmlns='http://www.w3.org/2000/svg' width='112' height='112.165'>
 							<g fill='none'>
 								<path
