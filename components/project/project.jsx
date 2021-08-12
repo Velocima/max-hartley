@@ -1,17 +1,24 @@
 import styles from './project.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AiOutlineGlobal } from 'react-icons/ai';
 
 export default function Project({ project, style }) {
-	const { title, description, year, link, image, github } = project;
+	const { title, year, link, image, github } = project;
 	return (
 		<section className={styles.projectContainer} style={style}>
-			<div
-				className={styles.background}
-				style={{
-					background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${image}) center/cover no-repeat`,
-				}}
-			></div>
+			<div className={styles.background}>
+				<Image
+					src={image}
+					className={styles.backgroundImage}
+					layout='fill'
+					objectFit='cover'
+					quality={100}
+					placeholder='blur'
+					preload='true'
+				/>
+			</div>
+			<div className={styles.backgroundShader}></div>
 			<h1>{title}</h1>
 
 			<div className={styles.links}>
