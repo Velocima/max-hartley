@@ -14,7 +14,7 @@
 	justify-content: center;
 }
 .home:hover {
-	animation: pulse 1s infinite;
+	animation: pulse100 1s infinite;
 }
 
 .projects {
@@ -84,7 +84,7 @@
 	}
 }
 
-@keyframes pulse {
+@keyframes pulse100 {
 	0% {
 	}
 	10% {
