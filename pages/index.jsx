@@ -10,7 +10,6 @@ export default function Home() {
 	const [isBioHidden, setIsBioHidden] = useState(true);
 
 	const handleClick = ({ target }) => {
-		console.log(target);
 		if (target.className.includes('paragraph')) return;
 		setIsBioHidden((s) => !s);
 	};
