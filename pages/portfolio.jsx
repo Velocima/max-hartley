@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '../styles/portfolio.module.css';
 import Project from '../components/project/project';
 import ProjectButton from '../components/project/projectButtons';
+import ImagePreloader from '../components/imagePreloader/ImagePreloader';
 import projectInfo from '../projects/projects';
 import { useState, useEffect } from 'react';
 
@@ -101,6 +102,7 @@ export default function Portfolio() {
 			<Head>
 				<title>Portfolio | Max Hartley</title>
 			</Head>
+			<ImagePreloader />
 			<main className={styles.main}>
 				<Link href='/'>
 					<a className={styles.home}>

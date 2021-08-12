@@ -3,6 +3,7 @@ import style from '../styles/index.module.css';
 import Link from 'next/link';
 import FairyLights from '../components/fairylights/FairyLights';
 import Bio from '../components/bio/Bio';
+import ImagePreloader from '../components/imagePreloader/ImagePreloader';
 import { useState, useRef, useEffect } from 'react';
 import useWindowSize from '../hooks/useWindowSize';
 import { BsBriefcase } from 'react-icons/bs';
@@ -30,6 +31,7 @@ export default function Home() {
 			<Head>
 				<title>Max Hartley</title>
 			</Head>
+			<ImagePreloader />
 			<FairyLights>
 				<section className={style.title} onClick={handleClick}>
 					<h1 ref={titleRef}>
