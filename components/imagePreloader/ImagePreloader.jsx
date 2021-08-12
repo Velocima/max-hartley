@@ -1,13 +1,13 @@
 import styles from './image_preloader.module.css';
 import React from 'react';
 import projectInfo from '../../projects/projects';
-import Image from 'next/head';
 
 export default function ImagePreloader() {
+	console.log(projectInfo);
 	return (
 		<div className={styles.imagePreloader}>
 			{projectInfo.map((project, i) => (
-				<Image key={i} height={0} width={0} src={project.image} alt='' />
+				<img key={i} src={project.image} alt='' />
 			))}
 		</div>
 	);

@@ -1,6 +1,5 @@
 import styles from './project.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
 import { AiOutlineGlobal } from 'react-icons/ai';
 
 export default function Project({ project, style }) {
@@ -8,15 +7,7 @@ export default function Project({ project, style }) {
 	return (
 		<section className={styles.projectContainer} style={style}>
 			<div className={styles.background}>
-				<Image
-					src={image}
-					className={styles.backgroundImage}
-					layout='fill'
-					objectFit='cover'
-					quality={100}
-					priority={true}
-					placeholder='blur'
-				/>
+				<img src={image} alt='' className={styles.backgroundImage} />
 			</div>
 			<div className={styles.backgroundShader}></div>
 			<h1>{title}</h1>
