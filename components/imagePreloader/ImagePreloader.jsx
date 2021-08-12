@@ -6,9 +6,9 @@ import Image from 'next/head';
 export default function ImagePreloader() {
 	return (
 		<div className={styles.imagePreloader}>
-			{projectInfo.map((project, i) => {
-				<Image height={0} width={0} src={project.image} alt='' />;
-			})}
+			{projectInfo.map((project, i) => (
+				<Image key={i} height={0} width={0} src={project.image} alt='' />
+			))}
 		</div>
 	);
 }
