@@ -46,26 +46,32 @@
 	margin-right: 10px;
 }
 
-.links a:not(:nth-child(4)):hover {
+.links a:hover {
 	color: #fc5185;
 }
-.links a:hover svg {
+
+.links a:not(:last-child):hover svg,
+.portfolioIconContainer:hover {
 	animation: pulse 1s infinite;
 }
-.portfolioLink {
-	width: 165px;
-	height: 165px;
-	background-color: #fc518500;
-	border: 10px solid#fc5185;
+
+.portfolioIconContainer {
+	display: grid;
+	place-items: center;
+	width: 112px;
+	height: 112px;
+	margin-bottom: 10px;
+	border: 6px solid#fc5185;
 	border-radius: 50%;
-	font-size: 30px;
-	text-align: right;
-	transition: 0.5s;
 	z-index: 20;
 }
-.portfolioLink:hover {
-	background-color: #fc518580;
-	animation: pulse 1s infinite;
+
+.portfolioIconContainer .portfolioIcon {
+	width: 82px;
+	height: 82px;
+	color: #fc5185;
+	z-index: 20;
+	margin-bottom: 6px;
 }
 
 @keyframes pulse {
@@ -139,13 +145,10 @@
 	.links a {
 		font-size: 24px;
 	}
-	.links svg {
+
+	.links a:not(:last-child) svg,
+	.portfolioIconContainer {
 		transform: scale(0.8);
-	}
-	.portfolioLink {
-		width: 132px;
-		height: 132px;
-		border: 6px solid #fc5185;
 	}
 }
 @media screen and (max-width: 400px) {
@@ -165,11 +168,6 @@
 	.links a {
 		font-size: 20px;
 	}
-	.portfolioLink {
-		width: 115px;
-		height: 115px;
-		border: 5px solid #fc5185;
-	}
 }
 
 @media screen and (min-width: 2500px) {
@@ -180,17 +178,20 @@
 	.title h2 {
 		font-size: 40px;
 	}
-	.links svg {
+	.links a:not(:last-child) svg,
+	.portfolioIconContainer {
 		transform: scale(1.4);
 		margin-bottom: 50px;
 		margin-top: 20px;
 	}
+
+	.portfolioIconContainer {
+		margin-bottom: 50px;
+		margin-top: 20px;
+	}
+
 	.links a {
 		font-size: 40px;
-	}
-	.portfolioLink {
-		width: 230px;
-		height: 230px;
 	}
 }
 @media screen and (min-width: 3800px) {
@@ -201,16 +202,13 @@
 	.title h2 {
 		font-size: 60px;
 	}
-	.links svg {
+	.links a:not(:last-child) svg,
+	.portfolioIconContainer {
 		transform: scale(2);
 		margin-bottom: 50px;
 		margin-top: 20px;
 	}
 	.links a {
 		font-size: 60px;
-	}
-	.portfolioLink {
-		width: 330px;
-		height: 330px;
 	}
 }

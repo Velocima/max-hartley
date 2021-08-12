@@ -5,6 +5,8 @@ import FairyLights from '../components/fairylights/FairyLights';
 import Bio from '../components/bio/Bio';
 import { useState, useRef, useEffect } from 'react';
 import useWindowSize from '../hooks/useWindowSize';
+import { BsBriefcase } from 'react-icons/bs';
+import { IconContext } from 'react-icons';
 
 export default function Home() {
 	const [isBioHidden, setIsBioHidden] = useState(true);
@@ -136,7 +138,14 @@ export default function Home() {
 						Contact Me
 					</a>
 					<Link href='/portfolio'>
-						<a className={style.portfolioLink}>Portfolio</a>
+						<a>
+							<div className={style.portfolioIconContainer}>
+								<IconContext.Provider value={{ className: style.portfolioIcon }}>
+									<BsBriefcase />
+								</IconContext.Provider>
+							</div>
+							Portfolio
+						</a>
 					</Link>
 				</section>
 			</FairyLights>
