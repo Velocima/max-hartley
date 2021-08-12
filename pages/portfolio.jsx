@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from '../styles/portfolio.module.css';
 import Project from '../components/project/project';
 import ProjectButton from '../components/project/projectButtons';
@@ -92,13 +93,15 @@ export default function Portfolio() {
 
 	const projectStyle = {
 		transition: isProjectChanging ? '0.5s' : 'none',
-		transform: `translateY(${
-			!isProjectChanging ? '-80vh' : isProjectChangeNext ? '-160vh' : 0
-		})`,
+		transform: `translateY(${!isProjectChanging ? '-80vh' : isProjectChangeNext ? '-160vh' : 0})`,
 	};
 
 	return (
 		<>
+			<Head>
+				<title>Portfolio | Max Hartley</title>
+				<link rel='icon' href='/logo.png' />
+			</Head>
 			<main className={styles.main}>
 				<Link href='/'>
 					<a className={styles.home}>
@@ -122,17 +125,9 @@ export default function Portfolio() {
 					</a>
 				</Link>
 				<section className={styles.projects}>
-					{[previousProjectIndex, currentProjectIndex, nextProjectIndex].map(
-						(index, i) => {
-							return (
-								<Project
-									project={projectInfo[index]}
-									style={projectStyle}
-									key={i}
-								/>
-							);
-						}
-					)}
+					{[previousProjectIndex, currentProjectIndex, nextProjectIndex].map((index, i) => {
+						return <Project project={projectInfo[index]} style={projectStyle} key={i} />;
+					})}
 				</section>
 
 				<nav className={styles.nav}>

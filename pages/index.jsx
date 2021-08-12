@@ -27,7 +27,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Create Next App</title>
+				<title>Max Hartley</title>
 				<link rel='icon' href='/logo.png' />
 			</Head>
 			<FairyLights>
@@ -130,12 +130,7 @@ export default function Home() {
 								style={{ fill: '#fc5185' }}
 								d='M25.95 64.831L2.21 70.75a2.28 2.28 0 101.104 4.423l23.739-5.918a2.28 2.28 0 10-1.103-4.424zM19.224 84.349l-1.18.294a2.28 2.28 0 001.103 4.424l1.18-.294a2.28 2.28 0 00-1.103-4.424z'
 							/>
-							<g
-								transform='translate(16.475 -.001)'
-								stroke='#fc5185'
-								strokeWidth='6'
-								fill='none'
-							>
+							<g transform='translate(16.475 -.001)' stroke='#fc5185' strokeWidth='6' fill='none'>
 								<ellipse cx='56' cy='56.083' rx='56' ry='56.083' stroke='none' />
 								<ellipse cx='56' cy='56.083' rx='53' ry='53.083' />
 							</g>
@@ -147,12 +142,7 @@ export default function Home() {
 					</Link>
 				</section>
 			</FairyLights>
-			<Bio
-				isHidden={isBioHidden}
-				onClick={handleClick}
-				top={titlePos[0]}
-				left={titlePos[1]}
-			/>
+			<Bio isHidden={isBioHidden} onClick={handleClick} top={titlePos[0]} left={titlePos[1]} />
 		</>
 	);
 }
