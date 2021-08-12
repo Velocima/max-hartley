@@ -28,7 +28,6 @@ export default function Home() {
 		<>
 			<Head>
 				<title>Max Hartley</title>
-				<link rel='icon' href='/logo.png' />
 			</Head>
 			<FairyLights>
 				<section className={style.title} onClick={handleClick}>

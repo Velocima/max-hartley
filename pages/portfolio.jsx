@@ -100,7 +100,6 @@ export default function Portfolio() {
 		<>
 			<Head>
 				<title>Portfolio | Max Hartley</title>
-				<link rel='icon' href='/logo.png' />
 			</Head>
 			<main className={styles.main}>
 				<Link href='/'>
