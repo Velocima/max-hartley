@@ -14,6 +14,8 @@ export default function Project({ project, style }) {
 					layout='fill'
 					objectFit='cover'
 					quality={100}
+					priority={true}
+					placeholder='blur'
 				/>
 			</div>
 			<div className={styles.backgroundShader}></div>
